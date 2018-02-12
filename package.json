@@ -10,7 +10,9 @@
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --history-api-fallback --module-bind 'json=json-loader'",
     "start2": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline --history-api-fallback --module-bind 'json=json-loader'",
     "lint": "standard --verbose | snazzy",
-    "build": "webpack  --module-bind 'json=json-loader' --progress --profile --colors",
+    "build": "webpack  --module-bind 'json=json-loader' --progress --profile --colors --max_old_space_size=40966 --stack-size=40966",
+    "ionic:serve": "webpack  --module-bind 'json=json-loader' --progress --profile --colors --max_old_space_size=40966 --stack-size=40966",
+    "ionic:build": "webpack  --module-bind 'json=json-loader' --progress --profile --colors --max_old_space_size=40966 --stack-size=40966",
     "clean": "rm -rf node_modules/ && npm cache clean --force && npm install",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -89,6 +91,7 @@
   },
   "homepage": "https://github.com/seacloud9/#readme",
   "devDependencies": {
+    "@ionic/app-scripts": "^3.1.8",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "babel-preset-es2015": "^6.3.13",
