@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ocean Scene</title>
+    <meta name="description" content="Ocean Scene">
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <script src="aframe-effects.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.10.1/dist/aframe-extras.min.js"></script>
+    <script src="//cdn.rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene effects="fxaa, bloom, godrays"
+             bloom="radius: 0.66"
+             fxaa="true"
+             godrays="src: #sun; threshold: 0. 0.33; intensity: 2"
+             glitch="false">
+      <a-assets>
+        <img id="reverseGrd" src="reverseGrd.png" crossorigin="anonymous" />
+        <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
+        <img src="chrome2.png" id="chrome" crossorigin="anonymous">
+        <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
+        <a-asset-item id="dawningFont" src="Zorque_Regular.json"></a-asset-item>
+        <a-asset-item id="exoFont" src="Zorque_Regular.json"></a-asset-item>
+        <a-asset-item id="exoItalicFont" src="Zorque_Regular.json"></a-asset-item>
+        <!-- <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg"> -->
+        <!-- <img id="skyTexture" src="ocean.png"> -->
+      </a-assets>
+
+      <a-ocean color="#92E2E2" width="100" depth="100" density="35" speed="2" position="0, 0.5, 0"></a-ocean>
+      <!-- Background sky. -->
+      <a-entity position="-2.5 2 -7" scale="0.6 1.2 1" text-geometry="value: ETHERAL; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; size: 1.5; height: 0.5;" material="color:reverseGrd; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"></a-entity>
+     <!-- <a-sky height="512" radius="360" src="#skyTexture" theta-length="165" width="1024"></a-sky> -->
+      <a-entity environment="groundColor2: #188d85; gridColor: #befb06; dressingColor: #0bf1d4; skyColor: #185f8b; horizonColor: #92E2E2; active: true; seed: 14; skyType: gradient; fog: 0.8; ground: spikes; groundYScale: 4.91; groundColor: #061123; dressing: towers; ; grid: 1x1; preset: tron"></a-entity>
+      <!-- Ground. -->
+
+
+      
+    </a-scene>
+  <script>
+      //document.querySelector('[environment]').pause()
+    //setTimeout(document.querySelector('[environment]').load, 500)
+  </script>
+  </body>
+</html>
