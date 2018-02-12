@@ -144,7 +144,8 @@
   },
   "config": {
     "ionic_src_dir": "src",
-    "ionic_www_dir": "public"
+    "ionic_www_dir": "public",
+    "ionic_build_dir": "public"
   },
   "cordova": {
     "plugins": {
