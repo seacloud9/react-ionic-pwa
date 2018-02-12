@@ -12,7 +12,7 @@
     "lint": "standard --verbose | snazzy",
     "build": "webpack  --module-bind 'json=json-loader' --progress --profile --colors",
     "ionic:serve": "webpack  --module-bind 'json=json-loader' --progress --profile --colors",
-    "ionic:build": "node --max_old_space_size=2048 ./node_modules/.bin/ionic-app-scripts build --webpack ./webpack.config.js",
+    "ionic:build": "node --max_old_space_size=20048 ./node_modules/.bin/ionic-app-scripts build --webpack ./webpack.config.js",
     "clean": "rm -rf node_modules/ && npm cache clean --force && npm install",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
